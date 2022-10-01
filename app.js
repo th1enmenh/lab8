@@ -5,7 +5,7 @@ const path = require("path")
 
 const mongoose = require("mongoose")
 const studentModel = require("./models/StudentSchema")
-const url = "mongodb://localhost:27017";
+const url = "mongodb://localhost:27017/greenwich"
 mongoose.connect(url, {useNewUrlParser: true}, (err)=> {
     if(err) {
         console.log(err)
@@ -30,7 +30,7 @@ app.get("/student", (req,res) => {
         if (err){
             console.log(err)
         } else {
-            console.log(data)
+            res.render("student", {students: data})
         }
     })
 })

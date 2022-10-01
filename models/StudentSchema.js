@@ -1,6 +1,11 @@
 const mongoose = require("mongoose")
-var studentSchema = mongoose.Schema
+var studentSchema = mongoose.Schema({
+    name: String,
+    age: Number, 
+    email: String,
+    image: String,
+})
 
-var studentModel = mongoose.Model("student", studentSchema, "student")
+var studentModel = mongoose.model("student", studentSchema, "student")
 
-module.exports = studentModel;
+module.exports = studentModel
